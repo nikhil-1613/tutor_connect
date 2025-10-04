@@ -33,7 +33,7 @@ export const HeroSection = () => {
             <div className="space-y-4">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
                 Find the Perfect{' '}
-                <span className="bg-gradient-primary bg-clip-text text-black rounded-lg shadow-lg">
+                <span className="bg-gradient-primary bg-clip-text text-black rounded-lg shadow-lg p-1 m-1">
                   Tutor
                 </span>{' '}
                 for Your Child
