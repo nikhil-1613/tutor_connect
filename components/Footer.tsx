@@ -11,8 +11,8 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-transparent">
-                EduMatch
+              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-black rounded-lg shadow-xl p-2">
+                TutorConnect
               </span>
             </div>
             <p className="text-sm text-muted-foreground">
@@ -92,7 +92,7 @@ export const Footer = () => {
         </div>
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} EduMatch. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} TutorConnect. All rights reserved.</p>
         </div>
       </div>
     </footer>

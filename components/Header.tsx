@@ -29,8 +29,8 @@ export const Header = () => {
               <GraduationCap className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
               <div className="absolute -inset-1 bg-gradient-primary opacity-30 blur-md group-hover:opacity-50 transition-opacity rounded-full" />
             </div>
-            <span className="text-2xl font-bold bg-clip-text text-black">
-              EduMatch
+            <span className="text-2xl bg-gradient-primary font-bold bg-clip-text text-black rounded-lg p-2">
+              TutorConnect
             </span>
           </Link>
 
