@@ -13,7 +13,7 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'EduMatch - Connect with the Perfect Tutor',
+  title: 'TutorConnect - Connect with the Perfect Tutor',
   description: 'Find quality tutors for your children with flexible timings and affordable rates',
 };
 

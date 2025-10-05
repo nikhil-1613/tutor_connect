@@ -6,6 +6,8 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { QuotesSection } from '@/components/home/QuotesSection';
 import { WhyChooseUsSection } from '@/components/home/WhyChooseUsSection';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
+import { HowItWorks } from '@/components/home/HowitWorks';
+import { CallToAction } from '@/components/home/CallToAction';
 
 export default function Home() {
   return (
@@ -13,9 +15,11 @@ export default function Home() {
       <Header />
       <main className="flex-1">
         <HeroSection />
-        <QuotesSection />
         <WhyChooseUsSection />
+        <HowItWorks />
+        <QuotesSection />
         <TestimonialsSection />
+        <CallToAction/>
       </main>
       <Footer />
     </div>
