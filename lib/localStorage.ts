@@ -27,6 +27,7 @@ export interface TutorProfile {
   referredBy?: string;
   assigned: boolean;
   createdAt: string;
+  pinPointLocation?: string;
 }
 
 export interface ParentRequest {
@@ -39,15 +40,37 @@ export interface ParentRequest {
   subjects: string[];
   preferredGender: string;
   address: string;
-  location?: { lat: number; lng: number };
+  pinPointLocation?: string;
   preferredTimings: string;
-  paymentRange: string;
+  paymentMin?: string;
+  paymentMax?: string;
+  paymentDependsOnDemo?: string;
   phoneNumber: string;
   additionalRequirements?: string;
-  status: 'pending' | 'assigned' | 'completed';
+  status: 'pending' | 'approved' | 'rejected';
   assignedTutorId?: string;
   createdAt: string;
 }
+
+// export interface ParentRequest {
+//   id: string;
+//   userId: string;
+//   fatherName: string;
+//   motherName: string;
+//   numberOfChildren: string;
+//   syllabus: string;
+//   subjects: string[];
+//   preferredGender: string;
+//   address: string;
+//   location?: { lat: number; lng: number };
+//   preferredTimings: string;
+//   paymentRange: string;
+//   phoneNumber: string;
+//   additionalRequirements?: string;
+//   status: 'pending' | 'assigned' | 'completed';
+//   assignedTutorId?: string;
+//   createdAt: string;
+// }
 
 export const getFromLocalStorage = <T>(key: string): T | null => {
   if (typeof window === 'undefined') return null;
