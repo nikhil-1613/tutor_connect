@@ -56,20 +56,21 @@ export default function AdminAssignedPage() {
     const whatsappUrl = `https://wa.me/${request.phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, "_blank");
   };
-const handleMessageTutor = (tutor: TutorProfile, request: ParentRequest) => {
-  let locationUrl = "N/A";
 
-  if (request.pinPointLocation) {
-    // Remove spaces in coordinates
-    const cleanedCoordinates = request.pinPointLocation.replace(/\s/g, "");
-    locationUrl = `https://www.google.com/maps/search/?api=1&query=${cleanedCoordinates}`;
-  }
+  const handleMessageTutor = (tutor: TutorProfile, request: ParentRequest) => {
+    let locationUrl = "N/A";
 
-  const message = `Hello! This is TutorConnect.\n\nYou have been assigned to ${request.fatherName} & ${request.motherName}.\n📍 Address: ${request.address || "N/A"}\n📞 Parent Contact: ${request.phoneNumber}\n🗺 Location: ${locationUrl}\n\nPlease connect to discuss further details.`;
+    if (request.pinPointLocation) {
+      // Remove spaces in coordinates
+      const cleanedCoordinates = request.pinPointLocation.replace(/\s/g, "");
+      locationUrl = `https://www.google.com/maps/search/?api=1&query=${cleanedCoordinates}`;
+    }
 
-  const whatsappUrl = `https://wa.me/${tutor.phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
-  window.open(whatsappUrl, "_blank");
-};
+    const message = `Hello! This is TutorConnect.\n\nYou have been assigned to ${request.fatherName} & ${request.motherName}.\n📍 Address: ${request.address || "N/A"}\n📞 Parent Contact: ${request.phoneNumber}\n🗺 Location: ${locationUrl}\n\nPlease connect to discuss further details.`;
+
+    const whatsappUrl = `https://wa.me/${tutor.phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+  };
 
   // const handleMessageTutor = (tutor: TutorProfile, request: ParentRequest) => {
   //   const message = `Hello! This is TutorConnect.\n\nYou have been assigned to ${request.fatherName} & ${request.motherName}.\n📍 Address: ${request.address || "N/A"}\n📞 Parent Contact: ${request.phoneNumber}\n\n Location: ${request.pinPointLocation}\nPlease connect to discuss further details.`;
