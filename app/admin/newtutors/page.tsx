@@ -16,12 +16,12 @@ import {
   DollarSign,
   BookOpen,
   MessageCircle,
-  Users,
+  UserPlus,
 } from "lucide-react";
 import { motion } from "framer-motion";
 import { toast } from "react-hot-toast";
 
-export default function AdminTutorsPage() {
+export default function AdminNewTutorsPage() {
   const router = useRouter();
   const { user, isAuthenticated } = useAuth();
   const [tutors, setTutors] = useState<TutorProfile[]>([]);
@@ -33,17 +33,21 @@ export default function AdminTutorsPage() {
       toast.error("Access denied. Admin account required.");
       router.push("/");
     } else {
-      loadTutors();
+      loadNewTutors();
     }
   }, [isAuthenticated, user, router]);
 
-  const loadTutors = () => {
+  const loadNewTutors = () => {
     const allTutors = getTutorProfiles();
-    setTutors(allTutors);
+    const sevenDaysAgo = new Date().getTime() - 7 * 24 * 60 * 60 * 1000;
+    const recentTutors = allTutors.filter(
+      (t) => new Date(t.createdAt).getTime() > sevenDaysAgo
+    );
+    setTutors(recentTutors);
   };
 
   const handleMessageTutor = (phoneNumber: string, name: string) => {
-    const message = `Hello ${name}, this is EduMatch Admin. We’d like to discuss tutoring opportunities with you.`;
+    const message = `Welcome ${name}! Thank you for joining EduMatch. We’ll contact you soon about teaching opportunities.`;
     const whatsappUrl = `https://wa.me/${phoneNumber.replace(/\D/g, "")}?text=${encodeURIComponent(
       message
     )}`;
@@ -58,21 +62,19 @@ export default function AdminTutorsPage() {
       <main className="flex-1 py-8 bg-muted/30">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold mb-2">All Tutors</h1>
+            <h1 className="text-3xl font-bold mb-2">New Tutors (Last 7 Days)</h1>
             <p className="text-muted-foreground">
-              Browse and manage all tutor profiles.
+              Recently registered tutors ready to start teaching.
             </p>
           </div>
 
           {tutors.length === 0 ? (
             <Card>
               <CardContent className="py-12 text-center">
-                <Users className="h-16 w-16 mx-auto mb-4 text-muted-foreground opacity-50" />
-                <h3 className="text-lg font-semibold mb-2">
-                  No Tutor Profiles Found
-                </h3>
+                <UserPlus className="h-16 w-16 mx-auto mb-4 text-muted-foreground opacity-50" />
+                <h3 className="text-lg font-semibold mb-2">No New Tutors Yet</h3>
                 <p className="text-muted-foreground">
-                  Tutors will appear here once they register.
+                  New tutors will appear here once they register.
                 </p>
               </CardContent>
             </Card>
@@ -90,9 +92,7 @@ export default function AdminTutorsPage() {
                       <CardTitle className="text-lg font-semibold">
                         {tutor.name}
                       </CardTitle>
-                      <Badge variant={tutor.assigned ? "default" : "secondary"}>
-                        {tutor.assigned ? "Assigned" : "Available"}
-                      </Badge>
+                      <Badge variant="outline">New</Badge>
                     </CardHeader>
 
                     <CardContent className="space-y-3">
@@ -107,12 +107,6 @@ export default function AdminTutorsPage() {
                         <BookOpen className="h-4 w-4" />
                         <span>{tutor.qualification}</span>
                       </div>
-
-                      {tutor.hasExperience && (
-                        <div className="text-sm text-muted-foreground">
-                          Experience: {tutor.yearsOfExperience} years
-                        </div>
-                      )}
 
                       <div className="flex items-center gap-2 text-sm text-muted-foreground">
                         <Clock className="h-4 w-4" />
@@ -151,11 +145,3 @@ export default function AdminTutorsPage() {
     </div>
   );
 }
-
-// import React from 'react'
-
-// export default function AdminTutorsPage() {
-//   return (
-//     <div>AdminTutorsPage</div>
-//   )
-// }

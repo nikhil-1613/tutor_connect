@@ -42,9 +42,9 @@ export default function AboutPage() {
               transition={{ duration: 0.5 }}
               className="max-w-3xl mx-auto text-center"
             >
-              <h1 className="text-4xl sm:text-5xl font-bold mb-6">About EduMatch</h1>
+              <h1 className="text-4xl sm:text-5xl font-bold mb-6">About TutorConnect</h1>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                EduMatch is a platform dedicated to connecting quality tutors with students who need personalized educational support. We believe that every child deserves access to excellent education, and every passionate teacher deserves the opportunity to make a difference.
+                TutorConnect is a platform dedicated to connecting quality tutors with students who need personalized educational support. We believe that every child deserves access to excellent education, and every passionate teacher deserves the opportunity to make a difference.
               </p>
             </motion.div>
           </div>
