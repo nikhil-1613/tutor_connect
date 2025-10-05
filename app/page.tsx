@@ -6,7 +6,7 @@ import { HeroSection } from '@/components/home/HeroSection';
 import { QuotesSection } from '@/components/home/QuotesSection';
 import { WhyChooseUsSection } from '@/components/home/WhyChooseUsSection';
 import { TestimonialsSection } from '@/components/home/TestimonialsSection';
-import { HowItWorks } from '@/components/home/HowitWorks';
+import { HowItWorks } from '@/components/home/HowItWorks';
 import { CallToAction } from '@/components/home/CallToAction';
 
 export default function Home() {
