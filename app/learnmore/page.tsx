@@ -1,9 +1,7 @@
-"use client"
+"use client";
 
-import React from 'react'
+import React from "react";
 
-export const LearnMore = () => {
-  return (
-    <div>LearnMore</div>
-  )
+export default function LearnMore() {
+  return <div>LearnMore</div>;
 }
