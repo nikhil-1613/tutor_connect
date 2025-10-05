@@ -4,9 +4,11 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Header } from "../Header";
 
 export const CallToAction = () => {
   return (
+    
     <section className="relative overflow-hidden py-20 sm:py-28 lg:py-32 px-4 sm:px-8 lg:px-20 my-16 sm:my-20 lg:my-24 mx-3 sm:mx-6 lg:mx-16 rounded-3xl bg-gradient-to-br from-primary via-purple-600 to-secondary text-primary-foreground shadow-2xl">
       {/* Animated Gradient Overlay */}
       <motion.div
@@ -89,11 +91,11 @@ export const CallToAction = () => {
             </Button>
           </Link>
 
-          <Link href="/learn-more" className="w-full sm:w-auto">
+          <Link href="/learnmore" className="w-full sm:w-auto">
             <Button
               size="lg"
               variant="outline"
-              className="w-full sm:w-auto border-white/50 text-white hover:bg-white/10 transition-all duration-300"
+              className="w-full sm:w-auto border-white/50 text-primary text-base font-bold hover:bg-white/10 transition-all duration-300"
             >
               Learn More
             </Button>

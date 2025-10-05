@@ -11,7 +11,8 @@ export const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center space-x-2">
               <GraduationCap className="h-8 w-8 text-primary" />
-              <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-black rounded-lg shadow-xl p-2">
+              {/* <span className="text-2xl font-bold bg-gradient-primary bg-clip-text text-black rounded-lg shadow-xl p-2"> */}
+              <span className="text-2xl  font-bold bg-clip-text text-black rounded-lg p-2">
                 TutorConnect
               </span>
             </div>
