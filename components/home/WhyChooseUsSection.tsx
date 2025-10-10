@@ -21,7 +21,7 @@ const features = [
   },
   {
     icon: Heart,
-    title: 'Caring Tutors',
+    title: 'Caring Tutors & One-On-One Attention',
     description: 'Our tutors are not just teachers, they\'re mentors who genuinely care about student success.',
     color: 'text-pink-500',
     bgColor: 'bg-pink-500/10'
@@ -60,7 +60,7 @@ export const WhyChooseUsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why Choose EduMatch?</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Why To Choose TutorConnect?</h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               We provide comprehensive educational support that goes beyond traditional tutoring
             </p>

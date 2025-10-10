@@ -42,8 +42,8 @@ export default function ContactPage() {
     {
       icon: Phone,
       title: 'Phone',
-      value: '+91 98765 43210',
-      link: 'tel:+919876543210'
+      value: '+91 9059197326',
+      link: 'tel:+ 9059197326'
     },
     {
       icon: MapPin,
